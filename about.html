@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Tech Titans</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            width: 85%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: maroon;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        /* Hamburger Menu Icon */
+        .menu-icon {
+            font-size: 1.8em;
+            cursor: pointer;
+            color: white;
+            display: none;
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+        }
+
+        /* Main Navigation (Visible on large screens) */
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        /* Dropdown Menu (Visible on small screens) */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 20px;
+            top: 70px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: maroon;
+            font-size: 1.2em;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #f4f4f4;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .dropdown-menu a {
+                color: maroon;
+            }
+        }
+
+        .about-section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f4f4f4;
+            margin-bottom: 30px;
+        }
+
+        .about-section h2 {
+            font-size: 2.5em;
+            color: maroon;
+            margin-bottom: 20px;
+        }
+
+        .about-section p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Experience, Mission, Vision, and Clients */
+        .experience {
+            display: flex; /* Use flexbox to align items in a row */
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+
+        .experience .exp-box {
+            background-color: #fff;
+            width: 23%; /* Adjust width for four boxes in a row */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center; /* Center text in the boxes */
+        }
+
+        .experience h3 {
+            color: maroon;
+            font-size: 1.8em;
+        }
+
+        .experience p {
+            font-size: 1.1em;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        .clients-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f4f4f4;
+        }
+
+        .clients-section h3 {
+            color: maroon;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .client-logos {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .client-logos img {
+            width: 180px;
+            height: 180px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: maroon;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .experience .exp-box {
+                width: 100%; /* Stacks the boxes on smaller screens */
+            }
+
+            .client-logos img {
+                width: 140px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>About Us</h1>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <nav>
+            <a href="../../index.html">Home</a>
+            <a href="../catalogue/catalog.html">Shop</a>
+            <a href="../services/serviceit.html">Services</a>
+            <a href="../contact/contact.html">Contact Us</a>
+        </nav>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="../../index.html">Home</a>
+            <a href="../catalogue/catalog.html">Shop</a>
+            <a href="../services/serviceit.html">Services</a>
+            <a href="../contact/contact.html">Contact Us</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="about-section">
+            <h2>Who We Are</h2>
+            <p>Welcome to Tech Titans, your trusted partner in IT solutions. With over a decade of experience, we specialize
+                in providing cutting-edge technology solutions that help businesses grow and thrive in the digital world. 
+                Our team of experts is dedicated to delivering top-notch services, from system repair to software installation, 
+                ensuring that all your technical needs are met efficiently and effectively.</p>
+        </section>
+
+        <section class="experience">
+            <div class="exp-box">
+                <h3>Our Experience</h3>
+                <p>With over 10 years of experience in the IT industry, Tech Titans has consistently delivered exceptional
+                    services to a wide range of clients. From small startups to large enterprises, we have a proven track
+                    record of success, helping businesses navigate the ever-evolving tech landscape.</p>
+            </div>
+            <div class="exp-box">
+                <h3>Our Client Base</h3>
+                <p>We have proudly served clients from diverse industries, including finance, healthcare, retail, and more.
+                    Our client base spans across Africa and beyond, and we are committed to providing each client with
+                    personalized solutions that meet their unique needs. At Tech Titans, customer satisfaction is our top
+                    priority.</p>
+            </div>
+            <div class="exp-box">
+                <h3>Our Mission</h3>
+                <p>Our mission is to empower businesses through innovative technology solutions that enhance productivity, 
+                    efficiency, and growth. We strive to create lasting partnerships with our clients and deliver value 
+                    that drives success.</p>
+            </div>
+            <div class="exp-box">
+                <h3>Our Vision</h3>
+                <p>We envision a world where technology is seamlessly integrated into every aspect of business, enabling 
+                    organizations to achieve their full potential. Our goal is to be at the forefront of technological 
+                    advancements, shaping the future of IT solutions.</p>
+            </div>
+        </section>
+
+        <section class="clients-section">
+            <h3>Our Clients</h3>
+            <div class="client-logos">
+                <img src="../../images/imgntech.jpg" alt="Client 1">
+                <img src="../../images/red cross.png" alt="Client 2">
+                <img src="../../images/arkmed.jpg" alt="Client 3">
+                <img src="../../images/techmak.jpg" alt="Client 4">
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Tech Titans. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("dropdownMenu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+
+</html>
